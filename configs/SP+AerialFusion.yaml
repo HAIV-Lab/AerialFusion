@@ -1,0 +1,49 @@
+data:
+  name: custom
+  data_dir: data
+  img_size: [640, 480]
+  scales: [1, 1]
+  train_size: 150000
+  val_size: 1500
+  batch_size: 16
+  num_workers: 4
+
+model:
+  name: two_view_pipeline_AerialFusion
+  extractor:
+    name: superpoint
+    max_num_keypoints: 1024
+    description_dim: 256
+    force_num_keypoints: true
+    detection_threshold: 0.000
+    nms_radius: 3
+    trainable: false
+
+  matcher:
+    name: matchers.AerialFusion.AerialFusion
+    ground_truth: true
+    min_track_length: 4
+    max_track_length: 16
+    ratio: 0.5
+    nn_thresh: 0.6
+    filter_threshold: 0.1
+    flash: false
+    checkpointed: true
+    trainable: true
+
+  ground_truth:
+    name: matchers.homography_AerialFusion_matcher
+    th_positive: 5
+    th_negative: 3
+
+train:
+  seed: 0
+  epochs: 40
+  log_every_iter: 100
+  eval_every_iter: 500
+  lr: 1e-6
+  lr_schedule:
+    start: 20
+    type: exp
+    on_epoch: true
+    exp_div_10: 10

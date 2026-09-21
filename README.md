@@ -48,3 +48,17 @@ The copied local package currently keeps these files so that inference can run d
 - The original local experiment outputs are not included.
 - Dataset paths are not hard-coded; pass input folders through command-line arguments.
 - The demo saves fused color images to `--output_dir`.
+
+## If you find this work helpful, please cite it as follows:
+
+```bibtex
+@inproceedings{qiu2026aerialfusion,
+  title={AerialFusion: Co-Motion-Driven Unified Registration and Fusion on Multi-modal Data Streams from Aerial View},
+  author={Qiu, Junhui and Xiang, Xiang and Wang, Hongyun and Gui, Jiaqi},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={40},
+  number={10},
+  pages={8583--8591},
+  year={2026}
+}
+```

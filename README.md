@@ -1,7 +1,4 @@
 # AerialFusion
-
-This repository contains a cleaned open-source package for AerialFusion registration and infrared-visible image fusion. The release keeps the model code, required inference modules, configuration, and pretrained weights needed by the provided demo. Local experiment outputs, logs, cache files, and dataset-specific test scripts are removed.
-
 ## Directory layout
 
 ```text
